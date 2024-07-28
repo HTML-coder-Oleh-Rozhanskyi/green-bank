@@ -1,5 +1,5 @@
-$canvas: 1920px;
-$container: 1510px;
+$canvas: 1440px;
+$container: 1240px;
 @mixin xsm {
 	@media (max-width: 424.98px) {
 		@content;
@@ -35,12 +35,12 @@ $container: 1510px;
 		@content;
 	}
 }
-@mixin focus {
-	@content;
-	&:focus-visible {
-		color: var(--black);
-	}
-}
+// @mixin focus {
+// 	@content;
+// 	&:focus-visible {
+// 		color: var(--black);
+// 	}
+// }
 /*@mixin active {
 	@content;
 	&:active {
@@ -70,24 +70,6 @@ $container: 1510px;
 	&:hover::before {
 		@media (any-hover) {
 			transform: translateX(-50%) scale(1);
-		}
-	}
-}
-@mixin hover-footer {
-	&::before {
-		content: "";
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		width: 100%;
-		height: 2px;
-		background-color: var(--white);
-		transform: scale(0);
-		transition: transform var(--transition);
-	}
-	&:hover::before {
-		@media (any-hover) {
-			transform: scale(1);
 		}
 	}
 }

@@ -1,13 +1,12 @@
 :root {
-	--bg-1: #f0f0f0;
-	--bg-2: #151515;
 	--white: #fff;
-	--black: #151515;
+	--text-color: #adb2b1;
+	--brand-color: #2bb32a;
+	--font-family: "MPLUS1";
+	--second-family: "Poppins";
+	--paddingInline: 70px;
 	--transition: 0.3s;
-	--transition-long: 1s;
-	--font-family: "Neue Machina", sans-serif;
-	--paddingInline: 80px;
-	@media (max-width: 1439px) {
+	@include d {
 		--paddingInline: 32px;
 	}
 	@include m {
@@ -26,12 +25,12 @@ html {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-family: var(--font-family);
-	font-size: 18px;
+	font-family: var(--second-family);
+	font-size: 16px;
 	font-weight: 400;
 	line-height: 1.5;
-	color: var(--black);
-	background-color: var(--bg-1);
+	color: var(--text-color);
+	background: url(../img/site_bg.jpg) 0 0 / cover no-repeat;
 	&.menu-active {
 		overflow-y: hidden;
 		// padding-right: 10px;
