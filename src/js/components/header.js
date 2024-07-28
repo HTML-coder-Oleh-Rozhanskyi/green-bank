@@ -5,10 +5,10 @@ export function header() {
 		let scrollDistance = window.scrollY;
 
 		if (scrollDistance > 55) {
-			header.classList.add('header--scrolling');
+			header.classList.add('header-scrolling');
 		}
 		else {
-			header.classList.remove('header--scrolling');
+			header.classList.remove('header-scrolling');
 		}
 		document.querySelectorAll('.section').forEach((el, i) => {
 			if (el.offsetTop - document.querySelector('.header').clientHeight <= scrollDistance) {

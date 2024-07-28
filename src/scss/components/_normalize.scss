@@ -1,18 +1,21 @@
 html {
+	height: 100%;
 	box-sizing: border-box;
 	scroll-behavior: smooth;
-	height: 100%;
 }
+
 *,
 *::before,
 *::after {
 	box-sizing: inherit;
 }
+
 @mixin img {
 	display: block;
 	max-width: 100%;
 	@content;
 }
+
 @mixin svg {
 	display: block;
 	max-width: 100%;
@@ -20,42 +23,48 @@ html {
 }
 
 @mixin list {
-	margin-block: 0;
-	padding-left: 0;
 	list-style: none;
+	padding-left: 0;
+	margin-block: 0;
 	@content;
 }
+
 @mixin button {
 	font-family: inherit;
 	font-size: inherit;
 	color: inherit;
 	@content;
 }
+
 @mixin title {
 	margin-block: 0;
 	@content;
 }
+
 @mixin p {
 	margin-block: 0;
 	@content;
 }
+
 @mixin link {
 	text-decoration: none;
 	color: inherit;
 	@content;
 }
+
 @mixin input {
 	font-family: inherit;
-	color: inherit;
 	font-size: inherit;
+	color: inherit;
 	@content;
 }
+
 @media (prefers-reduced-motion: reduce) {
 	* {
-		animation-duration: 0.01ms !important;
-		animation-iteration-count: 1 !important;
-		transition-duration: 0.01ms !important;
-		scroll-behavior: auto !important;
+		transition-duration: 10ms;
+		animation-duration: 10ms;
+		animation-iteration-count: 1;
+		scroll-behavior: auto;
 	}
 }
 
@@ -99,12 +108,14 @@ button {
 }
 */
 
-// svg *[fill] {
-// 	fill: currentColor;
-// }
-// svg *[stroke] {
-// 	stroke: currentColor;
-// }
-// svg * {
-// 	transition-property: fill, stroke;
-// }
+/* 
+svg *[fill] {
+ 	fill: currentColor;
+ }
+ svg *[stroke] {
+ 	stroke: currentColor;
+ }
+ svg * {
+ 	transition-property: fill, stroke;
+ }
+ */

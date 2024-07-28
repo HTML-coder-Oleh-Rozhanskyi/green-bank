@@ -1,75 +1,89 @@
 $canvas: 1440px;
 $container: 1240px;
+
 @mixin xsm {
-	@media (max-width: 424.98px) {
+	@media (max-width <= 424.98px) {
 		@content;
 	}
 }
+
 @mixin sm {
-	@media (max-width: 574.98px) {
+	@media (max-width <= 574.98px) {
 		@content;
 	}
 }
+
 @mixin m {
-	@media (max-width: 767.98px) {
+	@media (max-width <= 767.98px) {
 		@content;
 	}
 }
+
 @mixin st {
-	@media (max-width: 959.98px) {
+	@media (max-width <= 959.98px) {
 		@content;
 	}
 }
+
 @mixin t {
-	@media (max-width: 1023.98px) {
+	@media (max-width <= 1023.98px) {
 		@content;
 	}
 }
+
 @mixin bt {
-	@media (max-width: 1439.98px) {
+	@media (max-width <= 1439.98px) {
 		@content;
 	}
 }
+
 @mixin d {
 	@media (max-width: $container) {
 		@content;
 	}
 }
-// @mixin focus {
-// 	@content;
-// 	&:focus-visible {
-// 		color: var(--black);
-// 	}
-// }
-/*@mixin active {
+
+/* 
+@mixin focus {
+ 	@content;
+ 	&:focus-visible {
+ 		color: var(--black);
+ 	}
+ }
+/*
+/*
+@mixin active {
 	@content;
 	&:active {
 			color: var(--black);
 	}
 }
 */
+
 @mixin container {
-	@content;
-	max-width: calc($container + var(--paddingInline) * 2);
 	margin: 0 auto;
-	padding-inline: var(--paddingInline);
-}
-@mixin hover {
+	max-width: calc($container + var(--padding-inline) * 2);
+	padding-inline: var(--padding-inline);
 	@content;
+}
+
+@mixin hover {
 	&::before {
 		content: "";
 		position: absolute;
-		bottom: 10px;
 		left: 50%;
+		bottom: 10px;
 		width: calc(100% - 40px);
 		height: 2px;
 		background-color: var(--black);
 		transform: translateX(-50%) scale(0);
 		transition: transform var(--transition);
 	}
+
 	&:hover::before {
 		@media (any-hover) {
 			transform: translateX(-50%) scale(1);
 		}
 	}
+	@content;
 }

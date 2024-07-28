@@ -4,13 +4,15 @@
 	--brand-color: #2bb32a;
 	--font-family: "MPLUS1";
 	--second-family: "Poppins";
-	--paddingInline: 70px;
+	--padding-inline: 70px;
 	--transition: 0.3s;
+
 	@include d {
-		--paddingInline: 32px;
+		--padding-inline: 32px;
 	}
+
 	@include m {
-		--paddingInline: 16px;
+		--padding-inline: 16px;
 	}
 }
 
@@ -30,9 +32,18 @@ html {
 	font-weight: 400;
 	line-height: 1.5;
 	color: var(--text-color);
-	background: url(../img/site_bg.jpg) 0 0 / cover no-repeat;
+	background-image: image-set(
+		url("../img/site_bg.jpg?as=avif") type("image/avif"),
+		url("../img/site_bg.jpg?as=webp") type("image/webp"),
+		url("../img/site_bg.jpg")
+	);
+	background-position: 0 0;
+	background-size: cover;
+	background-repeat: no-repeat;
+
 	&.menu-active {
 		overflow-y: hidden;
+
 		// padding-right: 10px;
 	}
 }
@@ -54,30 +65,3 @@ html {
 запобігти скачку контента при появі полоси прокрутки
 .body { padding: 0 calc(20px - (100vw - 100%)) 0 0; }
 */
-
-/* Загальний стиль для всіх веб-кіт браузерів */
-//::-webkit-scrollbar {
-//width: 10px; /* Ширина смужки прокрутки */
-//}
-//::-webkit-scrollbar-track {
-//	background: transparent; /* Колір треку */
-//}
-//
-//::-webkit-scrollbar-thumb {
-//	background-color: var(--bg-2); /* Колір смужки прокрутки */
-//	border-radius: 10px; /* Округлені краї смужки прокрутки */
-//	border: none; /* Простір між смужкою і треком */
-//}
-//::-webkit-scrollbar-thumb:hover {
-//	background-color: var(--bg-2); /* Колір смужки при наведенні */
-//}
-// для firefox
-// .body {
-// scrollbar-width: thin; /* Може бути auto, thin або none */
-// scrollbar-color: #888 #f1f1f1; /* Колір смужки прокрутки та треку */
-// }
-// /* Додатковий стиль для окремих частин смужки */
-// .scrollbar {
-// scrollbar-color: #888 #f1f1f1;
-// scrollbar-width: thin;
-// }

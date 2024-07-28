@@ -8,4 +8,4 @@ serve
 .parcelrc
 .parcel-cache
 --no-source-maps
-
+.stylelintrc
