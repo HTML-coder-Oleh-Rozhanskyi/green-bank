@@ -20,9 +20,19 @@ export function modal() {
 			document.querySelector(`[data-target="${path}"]`).classList.add('modals__item--visible');
 			modalOverlay.classList.add('modals__overlay--visible');
 
+
 			menuWrap.classList.remove('menu-active');
 			menuBtn.classList.remove('menu-active');
 			header.classList.remove('menu-active');
+
+			if (menuWrap.classList.contains('menu-active')) {
+				menuBtn.setAttribute('aria-label', 'close menu');
+				menuBtn.setAttribute('aria-expanded', 'true');
+			}
+			else {
+				menuBtn.setAttribute('aria-label', 'open menu');
+				menuBtn.setAttribute('aria-expanded', 'false');
+			}
 		});
 	});
 

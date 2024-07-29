@@ -12,11 +12,11 @@ export function burger() {
 
 
 		if (menuWrap.classList.contains('menu-active')) {
-			menuBtn.setAttribute('aria-laberl', 'close menu');
+			menuBtn.setAttribute('aria-label', 'close menu');
 			menuBtn.setAttribute('aria-expanded', 'true');
 		}
 		else {
-			menuBtn.setAttribute('aria-laberl', 'open menu');
+			menuBtn.setAttribute('aria-label', 'open menu');
 			menuBtn.setAttribute('aria-expanded', 'false');
 		}
 	};

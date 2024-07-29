@@ -78,6 +78,8 @@
 
 	// .header__button
 	&__button {
+		position: relative;
+		z-index: 200;
 		min-height: 48px;
 		color: var(--brand-color);
 		font-weight: 700;
