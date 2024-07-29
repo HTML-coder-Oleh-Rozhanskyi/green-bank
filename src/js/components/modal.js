@@ -1,9 +1,12 @@
 export function modal() {
-	const btns = document.querySelectorAll('.button-block__button');
+	const btns = document.querySelectorAll('.header__button');
 	const modalOverlay = document.querySelector('.modals__overlay');
 	const modalsItem = document.querySelectorAll('.modals__item');
 	const body = document.querySelector('.body');
-	const modalButton = document.querySelector('.modals-btn')
+	const modalButton = document.querySelector('.modals-btn-close')
+	const menuWrap = document.querySelector('.menu');
+	const menuBtn = document.querySelector('.burger-btn');
+	const header = document.querySelector('.header');
 
 	btns.forEach((el) => {
 		el.addEventListener('click', (e) => {
@@ -14,10 +17,12 @@ export function modal() {
 				el.classList.remove('modals__item--visible');
 			});
 
-
-
 			document.querySelector(`[data-target="${path}"]`).classList.add('modals__item--visible');
 			modalOverlay.classList.add('modals__overlay--visible');
+
+			menuWrap.classList.remove('menu-active');
+			menuBtn.classList.remove('menu-active');
+			header.classList.remove('menu-active');
 		});
 	});
 
