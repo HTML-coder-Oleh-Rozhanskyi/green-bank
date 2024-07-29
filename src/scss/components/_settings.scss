@@ -2,12 +2,13 @@
 	--white: #fff;
 	--text-color: #adb2b1;
 	--brand-color: #2bb32a;
+	--bg: #151d16;
 	--font-family: "MPLUS1";
 	--second-family: "Poppins";
 	--padding-inline: 70px;
 	--transition: 0.3s;
 
-	@include d {
+	@include bt {
 		--padding-inline: 32px;
 	}
 
@@ -22,24 +23,24 @@ html {
 
 .body {
 	position: relative;
-	overflow-x: clip;
 	min-height: 100%;
 	margin: 0;
 	padding: 0;
-	border: 0;
-	font-family: var(--second-family);
-	font-size: 16px;
-	font-weight: 400;
-	line-height: 1.5;
+	overflow-x: clip;
 	color: var(--text-color);
+	font-weight: 400;
+	font-size: 16px;
+	font-family: var(--second-family);
+	line-height: 1.5;
 	background-image: image-set(
 		url("../img/site_bg.jpg?as=avif") type("image/avif"),
 		url("../img/site_bg.jpg?as=webp") type("image/webp"),
 		url("../img/site_bg.jpg")
 	);
-	background-position: 0 0;
-	background-size: cover;
 	background-repeat: no-repeat;
+	background-position: center 0;
+	background-size: cover;
+	border: 0;
 
 	&.menu-active {
 		overflow-y: hidden;
@@ -53,12 +54,12 @@ html {
 	width: 1px !important;
 	height: 1px !important;
 	margin: -1px !important;
-	border: 0 !important;
 	padding: 0 !important;
-	white-space: nowrap !important;
-	clip-path: inset(100%) !important;
-	clip: rect(0 0 0 0) !important;
 	overflow: hidden !important;
+	white-space: nowrap !important;
+	border: 0 !important;
+	clip: rect(0 0 0 0) !important;
+	clip-path: inset(100%) !important;
 }
 
 /* 

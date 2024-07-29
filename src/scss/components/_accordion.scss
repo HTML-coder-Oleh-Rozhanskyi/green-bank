@@ -12,48 +12,48 @@
 
 	&::before,
 	&::after {
-		content: "";
-		width: 16px;
-		height: 2px;
-		background-color: var(--black);
 		position: absolute;
 		top: 28px;
 		right: 6px;
+		width: 16px;
+		height: 2px;
+		background-color: var(--black);
 		transition: transform var(--transition);
+		content: "";
 	}
 
 	// .accordion__btn
 	&__btn {
-		color: inherit;
-		font-family: inherit;
-		border: none;
-		background-color: transparent;
 		width: 100%;
 		padding: 20px 0;
+		color: inherit;
 		font-weight: 800;
 		font-size: 20px;
+		font-family: inherit;
 		text-align: left;
+		background-color: transparent;
+		border: none;
 		cursor: pointer;
 	}
 
 	// .accordion__content
 	&__content {
 		max-height: 0;
-		opacity: 0;
-		overflow: hidden;
 		padding-bottom: 0;
-		will-change: max-height;
+		overflow: hidden;
+		opacity: 0;
 		transition: all var(--transition);
+		will-change: max-height;
 
 		.accordion-active & {
-			opacity: 1;
 			padding-bottom: 20px;
+			opacity: 1;
 		}
 	}
 
 	// .accordion__text
 	&__text {
-		@include p;
+		@include margin-block;
 	}
 }
 

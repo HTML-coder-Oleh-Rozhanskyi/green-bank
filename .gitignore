@@ -7,5 +7,5 @@ project_info
 serve
 .parcelrc
 .parcel-cache
+.stylelintrc.json
 --no-source-maps
-.stylelintrc
