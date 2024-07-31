@@ -43,23 +43,6 @@ $container: 1240px;
 	}
 }
 
-/* 
-@mixin focus {
- 	@content;
- 	&:focus-visible {
- 		color: var(--black);
- 	}
- }
-/*
-/*
-@mixin active {
-	@content;
-	&:active {
-			color: var(--black);
-	}
-}
-*/
-
 @mixin container {
 	max-width: calc($container + var(--padding-inline) * 2);
 	margin: 0 auto;
@@ -87,3 +70,21 @@ $container: 1240px;
 	}
 	@content;
 }
+
+/* 
+@mixin focus {
+ 	@content;
+ 	&:focus-visible {
+ 		color: var(--black);
+ 	}
+ }
+/*
+
+/*
+@mixin active {
+	@content;
+	&:active {
+			color: var(--black);
+	}
+}
+*/

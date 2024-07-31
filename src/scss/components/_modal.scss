@@ -1,17 +1,18 @@
 .modals {
 	&__overlay {
 		position: fixed;
-		z-index: 100;
+		z-index: 900;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		width: 100%;
 		height: 100vh;
+		overflow: hidden;
 		background-color: #000000b3;
-		inset: 0;
 		visibility: hidden;
 		opacity: 0;
 		transition: all 0.3s ease-in-out;
+		inset: 0;
 
 		&--visible {
 			visibility: visible;
@@ -25,9 +26,10 @@
 		display: none;
 		flex-direction: column;
 		padding: 40px;
-		background-color: var(--bg-1);
+		background-color: var(--bg);
 		row-gap: 40px;
-		border-radius: 5px;
+		border: 2px solid var(--brand-color);
+		border-radius: 20px;
 
 		&--visible {
 			display: flex;
@@ -35,17 +37,24 @@
 		}
 	}
 
+	&__header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
 	&__title {
+		@include margin-block;
+
 		font-weight: 400;
 		font-size: 32px;
-
-		@include margin-block;
 	}
 
 	&__link {
+		@include link;
+
 		position: relative;
 
-		@include link;
 		@include hover;
 
 		&::before {
@@ -58,25 +67,28 @@
 .form {
 	display: flex;
 	flex-direction: column;
-	row-gap: 20px;
 
 	// .form__input
 	&__input {
+		@include input;
+
 		padding: 14px 16px;
 		border: 1px solid var(--black);
 		border-radius: 0;
 
-		@include input;
+		&:not(:last-child) {
+			margin-bottom: 20px;
+		}
 	}
 
 	// .form__btn
 	&__btn {
+		@include button;
+
 		padding: 14px 16px;
 		background-color: var(--white);
 		border: 1px solid var(--black);
 		transition: all var(--transition);
-
-		@include button;
 
 		&:hover {
 			@media (any-hover) {
@@ -88,24 +100,22 @@
 }
 
 .modals-btn-close {
-	position: absolute;
-	top: 16px;
-	right: 16px;
-	width: 30px;
-	height: 20px;
+	@include button;
+
+	position: relative;
+	width: 44px;
+	height: 44px;
 	padding: 12px;
 	background-color: transparent;
 	border: none;
 	cursor: pointer;
 
-	@include button;
-
 	&::before,
 	&::after {
 		position: absolute;
-		right: 0;
+		right: 7px;
 		display: block;
-		width: 100%;
+		width: 30px;
 		height: 2px;
 		background-color: var(--brand-color);
 		content: "";

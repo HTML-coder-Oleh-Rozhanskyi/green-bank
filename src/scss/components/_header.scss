@@ -28,13 +28,13 @@
 
 	// .header__container
 	&__container {
+		@include container;
+
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 		min-height: 110px;
 		transition: min-height var(--transition);
-
-		@include container;
 
 		.header-scrolling & {
 			min-height: 60px;
@@ -64,7 +64,6 @@
 		color: var(--white);
 		font-weight: 700;
 		font-size: 20px;
-		font-family: var(--font-family);
 		line-height: 1.2;
 		letter-spacing: -0.03em;
 	}
@@ -84,7 +83,7 @@
 		color: var(--brand-color);
 		font-weight: 700;
 		font-size: inherit;
-		font-family: var(--font-family);
+		font-family: inherit;
 		background-color: transparent;
 		border: 2px solid var(--brand-color);
 		border-radius: 64px;
@@ -136,11 +135,11 @@
 
 	// .menu__list
 	&__list {
+		@include list;
+
 		display: flex;
 		align-items: center;
 		column-gap: 32px;
-
-		@include list;
 
 		@include t {
 			flex-flow: column nowrap;
@@ -159,7 +158,6 @@
 		display: inline-block;
 		color: var(--white);
 		font-weight: 500;
-		font-family: var(--font-family);
 		padding-block: 12px;
 		line-height: 1;
 		white-space: nowrap;
@@ -180,8 +178,8 @@
 		position: relative;
 		z-index: 200;
 		display: block;
-		width: 30px;
-		height: 20px;
+		width: 44px;
+		height: 44px;
 		background-color: transparent;
 		border: 0;
 
@@ -195,8 +193,8 @@
 		&::before,
 		&::after {
 			position: absolute;
-			right: 0;
-			width: 100%;
+			right: 7px;
+			width: 30px;
 			height: 2px;
 			background-color: var(--brand-color);
 			transition: all 0.3s ease 0s;
@@ -204,11 +202,11 @@
 		}
 
 		&::before {
-			top: 0;
+			top: 10px;
 		}
 
 		&::after {
-			bottom: 0;
+			bottom: 10px;
 		}
 
 		span {
