@@ -4,10 +4,11 @@
 	--brand-color: #2bb32a;
 	--bg: #151d16;
 	--font-family: "MPLUS1";
+	--font-family-code: "MPLUS1-code";
 	--padding-inline: 70px;
 	--transition: 0.3s;
 
-	@include bt {
+	@include canvas {
 		--padding-inline: 32px;
 	}
 

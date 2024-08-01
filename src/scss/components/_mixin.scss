@@ -38,7 +38,13 @@ $container: 1240px;
 }
 
 @mixin d {
-	@media (width: $container) {
+	@media (width <= $container) {
+		@content;
+	}
+}
+
+@mixin canvas {
+	@media (width <= $canvas) {
 		@content;
 	}
 }

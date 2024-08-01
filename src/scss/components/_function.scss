@@ -6,6 +6,10 @@
 	@return calc($n / $container * 100vw);
 }
 
+@function vwbt($n) {
+	@return calc($n / 1199.98px * 100vw);
+}
+
 @function vwt($n) {
 	@return calc($n / 1023.98px * 100vw);
 }
