@@ -1,14 +1,18 @@
 .main {
 	--padding-block: 64px;
 
-	padding-top: 208px;
+	padding-top: clamp(100px, vwbt(208px), 208px);
 
-	@include bt {
-		padding-top: clamp(100px, vwbt(208px), 208px);
+	@include m {
+		--padding-block: 50px;
 	}
 
 	&__banner {
 		padding-bottom: var(--padding-block);
+	}
+
+	&__about {
+		padding-block: var(--padding-block);
 	}
 }
 
@@ -25,6 +29,10 @@
 	border: none;
 	border-radius: 64px;
 	cursor: pointer;
+
+	@include m {
+		min-height: 48px;
+	}
 
 	&::before {
 		position: absolute;
@@ -124,31 +132,14 @@
 		max-width: 498px;
 	}
 
-	// .banner__button
-	&__button {
-		// block
-	}
-
 	// .banner__img-card
 	&__img-card {
-		position: relative;
 		display: none;
 		align-self: flex-end;
 		backdrop-filter: blur(75px);
 
 		@media (width <= 767.98px) {
 			@include picture;
-
-			&::before {
-				position: absolute;
-				top: 0;
-				left: 0;
-				width: 489px;
-				height: 489px;
-				background-color: var(--brand-color);
-				border-radius: 50%;
-				content: "";
-			}
 		}
 	}
 }
@@ -202,7 +193,6 @@
 	min-height: 348px;
 	margin-right: 32px;
 	padding: 121px 36px 36px 56px;
-	border: 2px solid var(--text-color);
 	border-radius: 32px;
 	box-shadow: 0 4px 20px 0 #00000040;
 	transform: rotate(15deg);
@@ -228,6 +218,7 @@
 		z-index: -1;
 		inset: 0;
 		background: linear-gradient(136deg, #ffffff5e 0%, #ffffff5e 100%);
+		border: 2px solid var(--text-color);
 		border-radius: 32px;
 		content: "";
 	}
@@ -306,5 +297,55 @@
 		color: var(--white);
 		font-weight: 600;
 		font-size: 12px;
+	}
+}
+
+// ? banner end
+
+.about {
+	// .about__container
+	&__container {
+		@include container;
+
+		backdrop-filter: blur(16px);
+	}
+
+	// .about__list
+	&__list {
+		@include list;
+
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		gap: clamp(16px, vwt(32px), 32px);
+		justify-content: space-between;
+		padding: clamp(24px, vwt(64px), 64px);
+		background-color: #3d544d3d;
+		border-radius: 32px;
+	}
+
+	// .about__li
+	&__li {
+	}
+
+	// .about__span-list
+	&__span-list {
+		display: block;
+		margin-bottom: 8px;
+		color: var(--white);
+		font-weight: 700;
+		font-size: clamp(28px, vwt(48px), 48px);
+		line-height: 1.17;
+		letter-spacing: -0.01em;
+		text-align: center;
+	}
+
+	// .about__title-list
+	&__title-list {
+		@include margin-block;
+
+		color: var(--brand-color);
+		font-weight: 500;
+		font-size: inherit;
+		text-align: center;
 	}
 }

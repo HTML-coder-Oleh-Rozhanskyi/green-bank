@@ -1,15 +1,18 @@
 export function header() {
 	const header = document.querySelector('.header');
+	const headerContainer = document.querySelector('.header__container');
 
 	window.addEventListener('scroll', () => {
 		let scrollDistance = window.scrollY;
 
 		if (scrollDistance > 55) {
 			header.classList.add('header-scrolling');
+			headerContainer.classList.add('header-scrolling');
 		}
 		else {
 			header.classList.remove('header-scrolling');
 		}
+
 		document.querySelectorAll('.section').forEach((el, i) => {
 			if (el.offsetTop - document.querySelector('.header').clientHeight <= scrollDistance) {
 				document.querySelectorAll('.menu__link').forEach((el) => {
