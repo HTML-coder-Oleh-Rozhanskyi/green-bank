@@ -7,7 +7,7 @@
 	transition: background-color var(--transition);
 
 	&.header-scrolling {
-		background-color: var(--bg);
+		// js off
 	}
 
 	@include t {
@@ -30,10 +30,12 @@
 		align-items: center;
 		justify-content: space-between;
 		min-height: 110px;
-		transition: min-height var(--transition);
+		border-radius: 0 0 20px 20px;
+		transition: all var(--transition);
 
 		&.header-scrolling {
 			min-height: 60px;
+			background-color: var(--bg);
 		}
 
 		@include m {
@@ -44,7 +46,7 @@
 	// .header__logo
 	&__logo {
 		position: relative;
-		z-index: 200;
+		z-index: 300;
 		display: flex;
 		align-items: center;
 		column-gap: 12px;
@@ -74,7 +76,7 @@
 	// .header__button
 	&__button {
 		position: relative;
-		z-index: 200;
+		z-index: 300;
 		min-height: 48px;
 		color: var(--brand-color);
 		font-weight: 700;
@@ -118,6 +120,7 @@
 .menu {
 	@include t {
 		position: fixed;
+		z-index: 200;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -176,7 +179,7 @@
 
 	@include t {
 		position: relative;
-		z-index: 200;
+		z-index: 300;
 		display: block;
 		width: 44px;
 		height: 44px;

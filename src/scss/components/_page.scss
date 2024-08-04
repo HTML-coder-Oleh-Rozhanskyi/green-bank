@@ -1,3 +1,4 @@
+/* stylelint-disable declaration-block-no-redundant-longhand-properties */
 .main {
 	--padding-block: 64px;
 
@@ -11,7 +12,9 @@
 		padding-bottom: var(--padding-block);
 	}
 
-	&__about {
+	&__about,
+	&__slider,
+	&__offer {
 		padding-block: var(--padding-block);
 	}
 }
@@ -56,6 +59,14 @@
 			right: 14px;
 		}
 	}
+}
+
+.title {
+	@include margin-block;
+
+	color: var(--white);
+	font-weight: 700;
+	font-size: clamp(32px, vwt(40px), 40px);
 }
 
 .banner {
@@ -107,7 +118,7 @@
 
 		color: var(--white);
 		font-weight: 700;
-		font-size: 56px;
+		font-size: clamp(38px, vwt(56px), 56px);
 		line-height: 1.14;
 		letter-spacing: -0.025em;
 
@@ -117,7 +128,6 @@
 
 		@include t {
 			max-width: 80vw;
-			font-size: clamp(38px, vwt(56px), 56px);
 		}
 
 		@include m {
@@ -306,8 +316,6 @@
 	// .about__container
 	&__container {
 		@include container;
-
-		backdrop-filter: blur(16px);
 	}
 
 	// .about__list
@@ -316,15 +324,21 @@
 
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-		gap: clamp(16px, vwt(32px), 32px);
+		gap: clamp(12px, vwt(32px), 32px);
 		justify-content: space-between;
-		padding: clamp(24px, vwt(64px), 64px);
+		padding: clamp(12px, vwbt(64px), 64px);
 		background-color: #3d544d3d;
 		border-radius: 32px;
-	}
+		backdrop-filter: blur(16px);
 
-	// .about__li
-	&__li {
+		@include sm {
+			max-width: 70%;
+			margin: 0 auto;
+		}
+
+		@include xsm {
+			max-width: 90%;
+		}
 	}
 
 	// .about__span-list
@@ -347,5 +361,166 @@
 		font-weight: 500;
 		font-size: inherit;
 		text-align: center;
+	}
+}
+
+.slider {
+	// .slider__container
+	&__container {
+		@include container;
+
+		position: relative;
+		min-height: 32px;
+		overflow: hidden;
+	}
+
+	// .slider__list
+	&__list {
+		@include list;
+
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: flex;
+		gap: 32px;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+		min-height: 32px;
+		transform: translateX(110%);
+		animation: slider 30s linear infinite;
+
+		// animation-name: slider;
+		// animation-duration: 30s;
+		// animation-play-state: start;
+		// animation-timing-function: linear;
+		// animation-delay: 1s;
+		// animation-iteration-count: infinite;
+		// animation-direction: normal;
+		// animation-fill-mode: forwards;
+	}
+
+	// .slider__li
+	&__li {
+		flex-shrink: 0;
+	}
+
+	// .slider__img
+	&__img {
+		@include picture;
+	}
+
+	@keyframes slider {
+		from {
+			transform: translateX(110%);
+		}
+
+		to {
+			transform: translateX(-110%);
+		}
+	}
+}
+
+.offer {
+	// .offer__container
+	&__container {
+		@include container;
+	}
+
+	// .offer__title
+	&__title {
+		margin-bottom: 64px;
+		text-align: center;
+	}
+
+	// .offer__list
+	&__list {
+		@include list;
+
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(392px, 1fr));
+		gap: 32px;
+		justify-items: center;
+
+		@include sm {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	// .offer__li
+	&__li {
+		display: grid;
+		grid-template-columns: 64px 1fr;
+		gap: 24px;
+
+		@include sm {
+			grid-template-columns: 1fr;
+			justify-items: center;
+		}
+
+		&::before {
+			grid-row: 1/3;
+			grid-column: 1/2;
+			width: 64px;
+			height: 64px;
+			background-color: #3d544d;
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: 26px;
+			border-radius: 24px;
+			content: "";
+
+			@include sm {
+				grid-row: 1/2;
+			}
+		}
+
+		&--security {
+			&::before {
+				background-image: url("../img/offer/list-icon/security.svg");
+			}
+		}
+
+		&--pie {
+			&::before {
+				background-image: url("../img/offer/list-icon/pie.svg");
+			}
+		}
+
+		&--rectangle {
+			&::before {
+				background-image: url("../img/offer/list-icon/rectangle.svg");
+			}
+		}
+	}
+
+	// .offer__title-list
+	&__title-list {
+		@include margin-block;
+
+		grid-row: 1/2;
+		grid-column: 2/3;
+		margin-bottom: 8px;
+		color: var(--white);
+		font-weight: 500;
+		font-size: 24px;
+
+		@include sm {
+			grid-row: 2/3;
+			grid-column: 1/2;
+			margin-bottom: 0;
+			text-align: center;
+		}
+	}
+
+	// .offer__text-list
+	&__text-list {
+		grid-row: 2/3;
+		grid-column: 2/3;
+
+		@include sm {
+			grid-row: 3/4;
+			grid-column: 1/2;
+		}
 	}
 }
