@@ -32,11 +32,13 @@ html {
 	font-size: 16px;
 	font-family: var(--font-family), sans-serif;
 	line-height: 1.5;
-	background-image: image-set(
-		url("../img/site_bg.jpg?as=avif") type("image/avif"),
-		url("../img/site_bg.jpg?as=webp") type("image/webp"),
-		url("../img/site_bg.jpg")
-	);
+	background-color: #1a1e1c;
+
+	// background-image: image-set(
+	// 	url("../img/site_bg.jpg?as=avif") type("image/avif"),
+	// 	url("../img/site_bg.jpg?as=webp") type("image/webp"),
+	// 	url("../img/site_bg.jpg")
+	// );
 	background-repeat: no-repeat;
 	background-position: center 0;
 	background-size: cover;
