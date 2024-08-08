@@ -16,13 +16,15 @@
 	&__slider,
 	&__offer,
 	&__design,
-	&__find {
+	&__find,
+	&__quote {
 		padding-block: var(--padding-block);
 	}
 }
 
 .button {
 	position: relative;
+	display: block;
 	min-height: 56px;
 	padding: 16px 71px 16px 32px;
 	color: var(--white);
@@ -58,6 +60,29 @@
 	&:hover::before {
 		@media (any-hover) {
 			right: 14px;
+		}
+	}
+
+	&::after {
+		position: absolute;
+		bottom: -50px;
+		left: -30px;
+		width: max-content;
+		padding: 5px 10px;
+		// border: 1px solid var(--brand-color);
+		// border-radius: 5px;
+		outline: 0;
+		visibility: hidden;
+		opacity: 0;
+		transition: all var(--transition);
+		content: "the link is not connected";
+	}
+
+	&:hover::after,
+	&:focus-visible::after {
+		@media (any-hover) {
+			visibility: visible;
+			opacity: 1;
 		}
 	}
 }
@@ -388,6 +413,13 @@
 		max-width: 498px;
 	}
 
+	// .banner__button
+	&__button {
+		&::after {
+			display: none;
+		}
+	}
+
 	// .banner__img-card
 	&__img-card {
 		display: none;
@@ -688,6 +720,13 @@
 		}
 	}
 
+	// .design__button
+	&__button {
+		&::after {
+			display: none;
+		}
+	}
+
 	// .design__img
 	&__img {
 		display: none;
@@ -781,6 +820,81 @@
 	}
 }
 
+.quote {
+	&__container {
+		@include container;
+	}
+
+	// .quote__list
+	&__list {
+		@include list;
+
+		box-sizing: border-box;
+	}
+
+	// .quote__li
+	&__li {
+		display: grid;
+		height: auto;
+		padding: 48px 24px;
+		row-gap: 32px;
+		background: #27322f3d;
+		border-radius: 32px;
+		backdrop-filter: blur(16px);
+
+		&::before {
+			width: 56px;
+			aspect-ratio: 1;
+			background-color: #3d544d;
+			background-image: url("../img/icon/quote.svg");
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: 19px 17px;
+			border-radius: 50%;
+			content: "";
+		}
+	}
+
+	// .quote__text
+	&__text {
+		flex-shrink: 1;
+		margin: 0;
+	}
+
+	// .quote__author
+	&__author {
+		display: grid;
+		grid-template-columns: 48px 1fr;
+		column-gap: 8px;
+	}
+
+	// .quote__avatar
+	&__avatar {
+		grid-row: 1/3;
+		grid-column: 1/2;
+	}
+
+	// .quote__name
+	&__name {
+		grid-row: 1/2;
+		grid-column: 2/3;
+	}
+
+	// .quote__work
+	&__work {
+		grid-row: 2/3;
+		grid-column: 2/3;
+	}
+
+	// .quote__pagination
+	&__pagination {
+	}
+}
+
+.swiper-pagination-bullet {
+	background-color: var(--brand-color);
+}
+
 @keyframes slider {
 	from {
 		transform: translateX(110%);
@@ -827,7 +941,7 @@
 	}
 
 	to {
-		transform: translateY(-150px) translateX(0px) scale(0.9) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+		transform: translateY(-150px) translateX(0) scale(0.9) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
 	}
 }
 

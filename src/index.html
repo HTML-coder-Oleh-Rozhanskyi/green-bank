@@ -6,8 +6,10 @@
 	<link rel="apple-touch-icon" sizes="180x180" href="./img/icon/favicon/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="./img/icon/favicon/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="./img/icon/favicon/favicon-16x16.png">
-	<link rel="stylesheet" href="scss/style.scss">
-	<script type="module" src="js/script.js"></script>
+	<link rel="stylesheet" href="./scss/swiper-bundle.min.css">
+	<link rel="stylesheet" href="./scss/style.scss">
+	<script src="./js/components/swiper-bundle.min.js" defer></script>
+	<script type="module" src="./js/script.js"></script>
 	<title>Green Bank</title>
 </head>
 <body class="body">
@@ -162,7 +164,7 @@
 					<div class="design__text-block">
 						<h2 class="design__title title">Design your personalized credit card.</h2>
 						<p class="design__text">You have the freedom to personalize the design of your credit card, ensuring a truly unique experience that makes you feel extraordinary</p>
-						<button class="design__button button" type="button">Create New Card</button>
+						<button class="design__button button" type="button" data-modal-open-btn="modal-1" aria-expanded="false">Create New Card</button>
 					</div>
 					<div class="design__block-card">
 						<img class="design__img" src="./img/design/card.svg" alt="">
@@ -298,6 +300,64 @@
 						<h2 class="find__title title">Find the Perfect Credit Card for You</h2>
 						<p class="find__text">Discover your ideal credit card with ease. Our comprehensive selection caters to every financial need and lifestyle. Whether you seek cashback rewards, travel perks, or building credit, we have the perfect credit card waiting for you. Unleash the possibilities and find the credit card that fits your unique goals and aspirations.</p>
 						<a href="#!" class="find__button button">Learn More</a>
+					</div>
+				</div>
+			</section>
+			<section class="main__quote quote">
+				<div class="quote__container">
+					<h2 class="visually-hidden">Feedback from our customers</h2>
+					<div class="quote__swiper swiper">
+						<ul class="quote__list swiper-wrapper">
+							<li class="quote__li swiper-slide">
+								<blockquote class="quote__text"> "Great session! Dani was super helpful. She shared some practical advice on how can lorem ip we go about refining our service offerings." </blockquote>
+								<div class="quote__author">
+									<img class="quote__avatar" src="./img/banner/01.png" alt="">
+									<span class="quote__name"> Hadid Khan </span>
+									<span class="quote__work">UIUX Designer</span>
+								</div>
+							</li>
+							<li class="quote__li swiper-slide">
+								<blockquote class="quote__text"> "It's is both attractive and highly adaptable. It's exactly what I've been looking forefinitely wo lorem ipsum dolorth the investment." </blockquote>
+								<div class="quote__author">
+									<img class="quote__avatar" src="./img/banner/02.png" alt="">
+									<span class="quote__name">Wade Warren</span>
+									<span class="quote__work">Web Designer</span>
+								</div>
+							</li>
+							<li class="quote__li swiper-slide">
+								<blockquote class="quote__text"> "I am really satisfied with it. I'm good to go. It really saves me time and effort. It's is exactly what our business has been lacking. " </blockquote>
+								<div class="quote__author">
+									<img class="quote__avatar" src="./img/banner/03.png" alt="">
+									<span class="quote__name">Jenny Wilson</span>
+									<span class="quote__work">Trust Administrator</span>
+								</div>
+							</li>
+							<li class="quote__li swiper-slide">
+								<blockquote class="quote__text"> "Great session! Dani was super helpful. She shared some practical advice on how can lorem ip we go about refining our service offerings." </blockquote>
+								<div class="quote__author">
+									<img class="quote__avatar" src="./img/banner/01.png" alt="">
+									<span class="quote__name"> Hadid Khan </span>
+									<span class="quote__work">UIUX Designer</span>
+								</div>
+							</li>
+							<li class="quote__li swiper-slide">
+								<blockquote class="quote__text"> "It's is both attractive and highly adaptable. It's exactly what I've been looking forefinitely wo lorem ipsum dolorth the investment." </blockquote>
+								<div class="quote__author">
+									<img class="quote__avatar" src="./img/banner/02.png" alt="">
+									<span class="quote__name">Wade Warren</span>
+									<span class="quote__work">Web Designer</span>
+								</div>
+							</li>
+							<li class="quote__li swiper-slide">
+								<blockquote class="quote__text"> "I am really satisfied with it. I'm good to go. It really saves me time and effort. It's is exactly what our business has been lacking. " </blockquote>
+								<div class="quote__author">
+									<img class="quote__avatar" src="./img/banner/03.png" alt="">
+									<span class="quote__name">Jenny Wilson</span>
+									<span class="quote__work">Trust Administrator</span>
+								</div>
+							</li>
+						</ul>
+						<div class="quote__pagination swiper-pagination"></div>
 					</div>
 				</div>
 			</section>
