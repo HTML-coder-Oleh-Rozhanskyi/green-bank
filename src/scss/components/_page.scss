@@ -68,12 +68,17 @@
 		bottom: -50px;
 		left: -30px;
 		width: max-content;
+		height: max-content;
 		padding: 5px 10px;
+
 		// border: 1px solid var(--brand-color);
 		// border-radius: 5px;
 		outline: 0;
-		visibility: hidden;
-		opacity: 0;
+
+		// visibility: hidden;
+		// opacity: 0;
+		visibility: visible;
+		opacity: 1;
 		transition: all var(--transition);
 		content: "the link is not connected";
 	}
@@ -888,6 +893,7 @@
 
 	// .quote__pagination
 	&__pagination {
+		// block
 	}
 }
 
