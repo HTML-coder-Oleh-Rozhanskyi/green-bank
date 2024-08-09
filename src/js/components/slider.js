@@ -1,5 +1,5 @@
-import { Swiper } from 'swiper';
-import { Pagination } from 'swiper/modules';
+// import { Swiper } from 'swiper';
+// import { Pagination } from 'swiper/modules';
 
 export function slider() {
 	window.addEventListener('DOMContentLoaded', () => {
@@ -42,7 +42,7 @@ export function slider() {
 			'(min-width: 10px)',
 			'.swiper',
 			{
-				modules: [Pagination],
+				// modules: [Pagination],
 
 				// navigation: {
 				// 	nextEl: '.swiper-button-next',
