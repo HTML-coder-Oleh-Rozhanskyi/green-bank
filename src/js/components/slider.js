@@ -1,3 +1,6 @@
+import { Swiper } from 'swiper';
+import { Pagination } from 'swiper/modules';
+
 export function slider() {
 	window.addEventListener('DOMContentLoaded', () => {
 
@@ -7,8 +10,8 @@ export function slider() {
 			breakpoint = window.matchMedia(breakpoint);
 
 			const enableSwiper = function (className, settings) {
-				swiper = new Swiper(className, settings);
 
+				swiper = new Swiper(className, settings);
 				if (callback) {
 					callback(swiper);
 				}
@@ -39,10 +42,13 @@ export function slider() {
 			'(min-width: 10px)',
 			'.swiper',
 			{
+				modules: [Pagination],
+
 				// navigation: {
 				// 	nextEl: '.swiper-button-next',
 				// 	prevEl: '.swiper-button-prev',
 				// },
+
 				pagination: {
 					el: '.swiper-pagination',
 					type: 'bullets',
