@@ -67,33 +67,34 @@
 			right: 14px;
 		}
 	}
+}
 
-	&::after {
+.message {
+	position: relative;
+
+	&.message::after {
 		position: absolute;
 		bottom: -50px;
 		left: -30px;
+		display: none;
 		width: max-content;
 		height: max-content;
 		padding: 5px 10px;
-
-		// border: 1px solid var(--brand-color);
-		// border-radius: 5px;
-		outline: 0;
-
-		// visibility: hidden;
-		// opacity: 0;
-		visibility: visible;
-		opacity: 1;
-		transition: all var(--transition);
+		border: 1px solid var(--brand-color);
+		border-radius: 10px;
+		transition-behavior: allow-discrete;
+		opacity: 0;
+		transition: all 1s;
 		content: "the link is not connected";
+
+		@starting-style {
+			opacity: 0;
+		}
 	}
 
-	&:hover::after,
-	&:focus-visible::after {
-		@media (any-hover) {
-			visibility: visible;
-			opacity: 1;
-		}
+	&.message-active::after {
+		display: block;
+		opacity: 1;
 	}
 }
 
