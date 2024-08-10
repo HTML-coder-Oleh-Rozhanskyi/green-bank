@@ -71,31 +71,19 @@
 
 .message {
 	position: relative;
+}
 
-	&.message::after {
-		position: absolute;
-		bottom: -50px;
-		left: -30px;
-		display: none;
-		width: max-content;
-		height: max-content;
-		padding: 5px 10px;
-		border: 1px solid var(--brand-color);
-		border-radius: 10px;
-		transition-behavior: allow-discrete;
-		opacity: 0;
-		transition: all 1s;
-		content: "the link is not connected";
-
-		@starting-style {
-			opacity: 0;
-		}
-	}
-
-	&.message-active::after {
-		display: block;
-		opacity: 1;
-	}
+.message-active {
+	position: absolute;
+	bottom: -50px;
+	left: 0;
+	z-index: 1;
+	width: max-content;
+	height: max-content;
+	padding: 5px 10px;
+	background-color: var(--brand-color);
+	border-radius: 10px;
+	transition-behavior: allow-discrete;
 }
 
 .title {
@@ -917,7 +905,7 @@
 
 	// .faqs__title
 	&__title {
-		margin-bottom: 64px;
+		margin-bottom: clamp(32px, vwt(64px), 64px);
 		text-align: center;
 	}
 
@@ -1018,11 +1006,14 @@
 
 		@include t {
 			position: relative;
+			top: auto;
+			right: auto;
 			width: 48.7%;
 		}
 
 		@include m {
 			align-self: center;
+			width: 100%;
 		}
 	}
 

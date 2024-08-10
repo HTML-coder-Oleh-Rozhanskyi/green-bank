@@ -27,18 +27,20 @@ export function modal() {
 				el.classList.remove('modals__item--visible');
 			});
 
-			const targetMOdal = document.querySelector(`[data-modal-window="${path}"]`);
+			const targetModal = document.querySelector(`[data-modal-window="${path}"]`);
 			wrapper.setAttribute('inert', 'true');
 
 			modalOverlay.classList.add('modals__overlay--visible');
 
 			body.classList.add('menu-active');
 
-			targetMOdal.classList.add('modals__item--visible');
+			targetModal.classList.add('modals__item--visible');
 
-			const focusElementModal = targetMOdal.querySelectorAll(focusElement);
+			targetModal.setAttribute('aria-hidden', 'false')
 
-			if (targetMOdal) {
+			const focusElementModal = targetModal.querySelectorAll(focusElement);
+
+			if (targetModal) {
 				setTimeout(() => {
 					focusElementModal[0].focus()
 				}, 200);
@@ -72,6 +74,7 @@ export function modal() {
 			body.classList.remove('menu-active');
 			modalsItem.forEach((el) => {
 				el.classList.remove('modals__item--visible');
+				el.setAttribute('aria-hidden', 'true')
 			});
 		}
 	});
@@ -83,6 +86,7 @@ export function modal() {
 			body.classList.remove('menu-active');
 			modalsItem.forEach((el) => {
 				el.classList.remove('modals__item--visible');
+				el.setAttribute('aria-hidden', 'true')
 			});
 		});
 	});

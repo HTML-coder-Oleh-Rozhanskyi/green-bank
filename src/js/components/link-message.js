@@ -1,14 +1,32 @@
 export function linkMessage() {
 	const link = document.querySelectorAll('.message');
-	console.log('link: ', link);
-	link.forEach((el) => {
+
+
+	for (let el of link) {
 		el.addEventListener('click', () => {
-			el.classList.add('message-active');
+			const newElement = document.createElement('span');
+
+			newElement.textContent = 'the link is not connected';
+
+			el.appendChild(newElement);
+
+			newElement.classList.add('message-active')
+
+			const rect = newElement.getBoundingClientRect();
+
+			if (rect.right > window.innerWidth) {
+				newElement.style.left = "auto";
+				newElement.style.right = 0;
+			};
 
 			setTimeout(() => {
-				el.classList.remove('message-active');
+				newElement.remove();
 			}, 2000);
-		})
-	});
+
+
+
+		});
+	};
 };
+
 linkMessage();
