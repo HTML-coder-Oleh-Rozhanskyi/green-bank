@@ -21,6 +21,10 @@
 	&__faqs {
 		padding-block: var(--padding-block);
 	}
+
+	&__aplication {
+		padding-top: var(--padding-block);
+	}
 }
 
 .button {
@@ -919,6 +923,111 @@
 	// .faqs__list
 	&__list {
 		@include list;
+	}
+}
+
+.aplication {
+	// .aplication__container
+	&__container {
+		@include container;
+
+		position: relative;
+		display: flex;
+		gap: 32px;
+		overflow: hidden;
+
+		@include m {
+			flex-direction: column;
+		}
+	}
+
+	// .aplication__text-block
+	&__text-block {
+		flex-basis: 604px;
+		padding-block: clamp(50px, vwc(110px), 110px);
+
+		@include m {
+			flex-basis: auto;
+			padding-block: 0;
+		}
+	}
+
+	// .aplication__title
+	&__title {
+		@include margin-block;
+
+		margin-bottom: 20px;
+		color: var(--white);
+		font-weight: 700;
+		font-size: clamp(34px, vwt(48px), 48px);
+		line-height: 1.17;
+		letter-spacing: -0.01em;
+	}
+
+	// .aplication__text
+	&__text {
+		@include margin-block;
+
+		margin-bottom: 32px;
+		font-size: 18px;
+	}
+
+	// .aplication__button-block
+	&__button-block {
+		@include list;
+
+		display: flex;
+		column-gap: 24px;
+	}
+
+	// .aplication__item-button
+	&__item-button {
+		display: flex;
+		align-items: center;
+		background-color: #3d544d;
+		border-radius: 16px;
+		transition: background-color var(--transition);
+
+		&:hover {
+			@media (any-hover) {
+				background-color: var(--brand-color);
+			}
+		}
+	}
+
+	// .aplication__link
+	&__link {
+		@include link;
+
+		padding: 16px;
+		color: var(--white);
+	}
+
+	// .aplication__svg
+	&__svg {
+		@include picture;
+	}
+
+	// .aplication__img-block
+	&__img-block {
+		position: absolute;
+		top: 0;
+		right: var(--padding-inline);
+		width: 40%;
+
+		@include t {
+			position: relative;
+			width: 48.7%;
+		}
+
+		@include m {
+			align-self: center;
+		}
+	}
+
+	// .aplication__img
+	&__img {
+		@include picture;
 	}
 }
 
