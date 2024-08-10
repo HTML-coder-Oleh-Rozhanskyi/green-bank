@@ -17,7 +17,8 @@
 	&__offer,
 	&__design,
 	&__find,
-	&__quote {
+	&__quote,
+	&__faqs {
 		padding-block: var(--padding-block);
 	}
 }
@@ -899,6 +900,26 @@
 
 .swiper-pagination-bullet {
 	background-color: var(--brand-color);
+}
+
+.faqs {
+	// .faqs__container
+	&__container {
+		@include container;
+
+		max-width: 1020px;
+	}
+
+	// .faqs__title
+	&__title {
+		margin-bottom: 64px;
+		text-align: center;
+	}
+
+	// .faqs__list
+	&__list {
+		@include list;
+	}
 }
 
 @keyframes slider {

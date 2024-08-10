@@ -1,23 +1,16 @@
 .accordion {
 	position: relative;
-	padding-right: 30px;
-
-	&:not(:first-child) {
-		border-top: 1px solid var(--black);
-	}
-
-	&:not(:last-child) {
-		border-bottom: 1px solid var(--black);
-	}
+	padding-right: 40px;
+	border-bottom: 1px solid var(--text-color);
 
 	&::before,
 	&::after {
 		position: absolute;
-		top: 28px;
+		top: 35px;
 		right: 6px;
 		width: 16px;
 		height: 2px;
-		background-color: var(--black);
+		background-color: var(--text-color);
 		transition: transform var(--transition);
 		content: "";
 	}
@@ -25,10 +18,11 @@
 	// .accordion__btn
 	&__btn {
 		width: 100%;
-		padding: 20px 0;
-		color: inherit;
-		font-weight: 800;
-		font-size: 20px;
+		padding-inline: 0;
+		padding-block: clamp(16px, vwt(24px), 24px);
+		color: var(--white);
+		font-weight: 700;
+		font-size: clamp(18px, vwt(24px), 24px);
 		font-family: inherit;
 		text-align: left;
 		background-color: transparent;
