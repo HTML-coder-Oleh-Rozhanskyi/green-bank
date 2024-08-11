@@ -280,7 +280,7 @@
 		width: 100%;
 		margin-right: 0;
 		transform: rotate(0deg);
-		transition: transform 1s 0.2s;
+		transition: transform 2s;
 
 		@include canvas {
 			display: none;
@@ -325,15 +325,15 @@
 }
 
 .active .card-design-block--first {
-	transform: translateY(-140px) translateX(-70px) scale(0.8) rotateX(20deg) rotateY(0deg) rotateZ(0deg);
+	transform: translateY(-180px) translateX(-70px) scale(0.8) rotateX(20deg) rotateY(-10deg) rotateZ(0deg);
 }
 
 .active .card-design-block--second {
-	transform: translateY(-70px) translateX(-0) scale(0.8) rotateX(20deg) rotateY(0deg) rotateZ(0deg);
+	transform: translateY(-90px) translateX(-0) scale(0.8) rotateX(20deg) rotateY(-10deg) rotateZ(0deg);
 }
 
 .active .card-design-block--third {
-	transform: translateY(0) translateX(70px) scale(0.8) rotateX(20deg) rotateY(0deg) rotateZ(0deg);
+	transform: translateY(0) translateX(70px) scale(0.8) rotateX(20deg) rotateY(-10deg) rotateZ(0deg);
 }
 
 .active .card-find-block--first {

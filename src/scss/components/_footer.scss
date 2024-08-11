@@ -28,10 +28,6 @@
 		@include m {
 			grid-template-columns: repeat(2, 1fr);
 		}
-
-		@include xsm {
-			// grid-template-columns: 1fr;
-		}
 	}
 
 	// .footer__top

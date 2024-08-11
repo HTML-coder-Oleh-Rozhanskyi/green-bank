@@ -6,7 +6,9 @@ export function scrollEffect() {
 
 		const windowHeight = window.innerHeight;
 
-		if (elementPosition < windowHeight) {
+		const viewportMiddle = windowHeight * 70 / 100;
+
+		if (Math.abs(elementPosition - viewportMiddle) < 10 || elementPosition < viewportMiddle) {
 			targetElement.classList.add('active');
 		}
 	});
@@ -22,7 +24,9 @@ export function scrollEffect_2() {
 
 		const windowHeight = window.innerHeight;
 
-		if (elementPosition < windowHeight) {
+		const viewportMiddle = windowHeight * 70 / 100;
+
+		if (Math.abs(elementPosition - viewportMiddle) < 10 || elementPosition < viewportMiddle) {
 			targetElement.classList.add('active');
 		}
 	});
