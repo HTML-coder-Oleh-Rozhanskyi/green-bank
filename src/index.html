@@ -15,9 +15,9 @@
 	<div class="wrapper">
 		<header class="header">
 			<div class="header__container">
-				<a class="header__logo">
-					<img class="header__img-logo" src="./img/icon/header-logo.svg" alt="" width="24" height="24">
-					<span class="header__span-logo">GreenBank</span>
+				<a class=" header__logo logo">
+					<img class="logo__img" src="./img/icon/header-logo.svg" alt="" width="24" height="24">
+					<span class="logo__span">GreenBank</span>
 				</a>
 				<nav class="header__menu menu">
 					<ul class="menu__list">
@@ -167,7 +167,7 @@
 					</div>
 					<div class="design__block-card">
 						<img class="design__img" src="./img/design/card.svg" alt="" width="538" height="492">
-						<div class="card card--design-block card--first">
+						<div class="card card-design-block card-design-block--first">
 							<svg aria-hidden="true" role="img" class="card__decor-master-card card__decor-master-card--first" width="60" height="35">
 								<use xlink:href="./img/icon/sprite.svg#master-card"></use>
 							</svg>
@@ -191,7 +191,7 @@
 								<span class="card__date card__date--first">09/11</span>
 							</div>
 						</div>
-						<div class="card card--design-block card--second">
+						<div class="card card-design-block card-design-block--second">
 							<svg aria-hidden="true" role="img" class="card__decor-master-card card__decor-master-card--second" width="60" height="35">
 								<use xlink:href="./img/icon/sprite.svg#master-card"></use>
 							</svg>
@@ -215,7 +215,7 @@
 								<span class="card__date card__date--second">09/11</span>
 							</div>
 						</div>
-						<div class="card card--design-block card--third">
+						<div class="card card-design-block card-design-block--third">
 							<svg aria-hidden="true" role="img" class="card__decor-master-card card__decor-master-card--third" width="60" height="35">
 								<use xlink:href="./img/icon/sprite.svg#master-card"></use>
 							</svg>
@@ -246,7 +246,7 @@
 				<div class="find__container">
 					<div class="find__block-card">
 						<img class="find__img" src="./img/find/card.svg" alt="" width="457" height="491">
-						<div class="card card--find-block card--first card--first-find">
+						<div class="card card-find-block card-find-block--first">
 							<svg aria-hidden="true" role="img" class="card__decor-master-card card__decor-master-card--first" width="60" height="35">
 								<use xlink:href="./img/icon/sprite.svg#master-card"></use>
 							</svg>
@@ -270,7 +270,7 @@
 								<span class="card__date card__date--first">09/11</span>
 							</div>
 						</div>
-						<div class="card card--find-block card--second card--second-find">
+						<div class="card card-find-block card-find-block--second">
 							<svg aria-hidden="true" role="img" class="card__decor-master-card card__decor-master-card--second" width="60" height="35">
 								<use xlink:href="./img/icon/sprite.svg#master-card"></use>
 							</svg>
@@ -440,6 +440,81 @@
 			</section>
 		</main>
 		<footer class="footer">
+			<div class="footer__container">
+				<div class="footer__top">
+					<a class="footer__logo logo">
+						<img class="logo__img" src="./img/icon/header-logo.svg" alt="" width="24" height="24">
+						<span class="logo__span">GreenBank</span>
+					</a>
+					<p class="footer__text">Discover the power of our secure and rewarding credit cards</p>
+				</div>
+				<ul class="footer__list">
+					<li class="footer__li">
+						<a href="#!" class="footer__link">About us</a>
+					</li>
+					<li class="footer__li">
+						<a href="#!" class="footer__link">Investors</a>
+					</li>
+					<li class="footer__li">
+						<a href="#!" class="footer__link">Features</a>
+					</li>
+					<li class="footer__li">
+						<a href="#!" class="footer__link">Book a demo</a>
+					</li>
+					<li class="footer__li">
+						<a href="#!" class="footer__link">Security </a>
+					</li>
+				</ul>
+				<ul class="footer__list">
+					<li class="footer__li">
+						<a href="#!" class="footer__link">Products</a>
+					</li>
+					<li class="footer__li">
+						<a href="#!" class="footer__link">Credits Cards</a>
+					</li>
+					<li class="footer__li">
+						<a href="#!" class="footer__link">Gift Cards</a>
+					</li>
+					<li class="footer__li">
+						<a href="#!" class="footer__link">Savings accounts</a>
+					</li>
+					<li class="footer__li">
+						<a href="#!" class="footer__link">NFT</a>
+					</li>
+				</ul>
+				<ul class="footer__list">
+					<li class="footer__li">
+						<a href="#!" class="footer__link">Useful Links</a>
+					</li>
+					<li class="footer__li">
+						<a href="#!" class="footer__link">Free rewards</a>
+					</li>
+					<li class="footer__li">
+						<a href="#!" class="footer__link">Documentation</a>
+					</li>
+					<li class="footer__li">
+						<a href="#!" class="footer__link">Affiliate program</a>
+					</li>
+				</ul>
+				</ul>
+				<ul class="footer__list">
+					<li class="footer__li">
+						<a href="#!" class="footer__link">Social</a>
+					</li>
+					<li class="footer__li">
+						<a href="#!" class="footer__link">Changelog</a>
+					</li>
+					<li class="footer__li">
+						<a href="#!" class="footer__link">License</a>
+					</li>
+					<li class="footer__li">
+						<a href="#!" class="footer__link">Site Maps</a>
+					</li>
+					<li class="footer__li">
+						<a href="#!" class="footer__link">News</a>
+					</li>
+				</ul>
+			</div>
 		</footer>
 	</div>
 	<div class="modals">
@@ -453,8 +528,8 @@
 					<label for="login"><span class="visually-hidden">enter login</span></label>
 					<input id="login" name="user-login" type="text" placeholder="Login" class="form__input">
 					<label for="password"><span class="visually-hidden">enter password</span></label>
-					<input id="password" name="user-password" type="password" placeholder="password" class="form__input">
-					<button class="form__btn" type="button">Login</button>
+					<input id="password" name="user-password" type="password" placeholder="Password" class="form__input">
+					<button class="form__btn button" type="button">Login</button>
 				</form>
 				<a href="#!" class="modals__link">Forgot your password?</a>
 			</div>
