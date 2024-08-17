@@ -1,14 +1,17 @@
 export function linkMessage() {
-	const link = document.querySelectorAll('.message');
+	document.addEventListener("click", addMessage);
 
+	function addMessage(event) {
+		const targetItem = event.target;
 
-	for (let el of link) {
-		el.addEventListener('click', () => {
+		if (targetItem.closest('.message')) {
+			const perrentElement = targetItem.closest('.message');
+
 			const newElement = document.createElement('span');
 
 			newElement.textContent = 'the link is not connected';
 
-			el.appendChild(newElement);
+			perrentElement.appendChild(newElement);
 
 			newElement.classList.add('message-active')
 
@@ -24,9 +27,9 @@ export function linkMessage() {
 			}, 2000);
 
 
-
-		});
-	};
+			event.preventDefault();
+		}
+	}
 };
 
 linkMessage();

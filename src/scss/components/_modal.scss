@@ -25,9 +25,10 @@
 		position: relative;
 		display: none;
 		flex-direction: column;
-		padding: 40px 24px;
+		max-width: 90%;
+		padding: 32px 24px;
 		background-color: var(--bg);
-		row-gap: 40px;
+		row-gap: 32px;
 		border: 2px solid var(--brand-color);
 		border-radius: 20px;
 
@@ -72,17 +73,17 @@
 	&__input {
 		@include input;
 
-		padding: 14px 16px;
+		min-height: 59px;
+		margin-bottom: 20px;
+		padding: 12px;
+		color: #000;
 		border: 1px solid var(--black);
-		border-radius: 0;
-
-		&:not(:last-child) {
-			margin-bottom: 20px;
-		}
+		border-radius: 32px;
 	}
 
 	// .form__btn
 	&__btn {
+		margin-bottom: 20px;
 		padding-right: 32px;
 		border: 2px solid transparent;
 		transition: all var(--transition);
@@ -103,7 +104,9 @@
 .modals-btn-close {
 	@include button;
 
-	position: relative;
+	position: absolute;
+	top: 5px;
+	right: 5px;
 	width: 44px;
 	height: 44px;
 	padding: 12px;

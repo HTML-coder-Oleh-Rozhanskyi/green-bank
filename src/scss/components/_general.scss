@@ -299,6 +299,10 @@
 		backdrop-filter: blur(7px);
 	}
 
+	&-design-block--first {
+		opacity: 0;
+	}
+
 	&-design-block--second,
 	&-find-block--second {
 		z-index: 2;
@@ -309,6 +313,7 @@
 	&-design-block--third {
 		z-index: 1;
 		background-color: var(--white);
+		opacity: 0;
 	}
 
 	&-find-block {
@@ -317,6 +322,7 @@
 
 	&-find-block--first {
 		z-index: 2;
+		opacity: 0;
 	}
 
 	&-find-block--second {
@@ -326,6 +332,7 @@
 
 .active .card-design-block--first {
 	transform: translateY(-180px) translateX(-70px) scale(0.8) rotateX(20deg) rotateY(-10deg) rotateZ(0deg);
+	opacity: 1;
 }
 
 .active .card-design-block--second {
@@ -334,10 +341,12 @@
 
 .active .card-design-block--third {
 	transform: translateY(0) translateX(70px) scale(0.8) rotateX(20deg) rotateY(-10deg) rotateZ(0deg);
+	opacity: 1;
 }
 
 .active .card-find-block--first {
 	transform: translateY(-150px) translateX(0) scale(0.8) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+	opacity: 1;
 }
 
 .active .card-find-block--second {
