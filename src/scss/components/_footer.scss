@@ -4,8 +4,7 @@
 	padding-block: 80px;
 
 	@include m {
-		position: relative;
-		top: -110px;
+		margin-top: -110px;
 		padding-block: 50px;
 	}
 

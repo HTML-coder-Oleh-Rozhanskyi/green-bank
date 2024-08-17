@@ -145,6 +145,10 @@
 		aspect-ratio: 1;
 		background-color: var(--brand-color);
 		border-radius: 50%;
+
+		@include t {
+			display: none;
+		}
 	}
 
 	&__decor-master-card,
