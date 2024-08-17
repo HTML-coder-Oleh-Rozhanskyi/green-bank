@@ -1,5 +1,4 @@
 /* stylelint-disable selector-class-pattern */
-// logo
 .logo {
 	position: relative;
 	z-index: 300;
@@ -86,6 +85,7 @@
 	color: var(--white);
 	font-weight: 700;
 	font-size: clamp(32px, vwt(40px), 40px);
+	line-height: 1;
 }
 
 .card {

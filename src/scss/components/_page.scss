@@ -9,11 +9,10 @@
 	}
 
 	&__banner {
-		padding-bottom: var(--padding-block);
+		padding-bottom: clamp(50px, vwc(200px), 200px);
 	}
 
 	&__about,
-	&__slider,
 	&__offer,
 	&__design,
 	&__find,
@@ -51,7 +50,7 @@
 			background: url("../img/banner/banner-decor.svg") 0 0 no-repeat;
 			content: "";
 
-			@include m {
+			@include t {
 				display: none;
 			}
 		}
@@ -172,7 +171,7 @@
 		@include list;
 
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
 		gap: clamp(12px, vwt(32px), 32px);
 		justify-content: space-between;
 		padding: clamp(12px, vwbt(64px), 64px);
@@ -223,6 +222,7 @@
 	&__list {
 		@include list;
 
+		padding-block: 64px;
 		display: flex;
 		gap: 32px;
 		align-items: center;
@@ -230,8 +230,9 @@
 		min-height: 32px;
 		overflow-x: auto;
 
-		// transform: translateX(110%);
-		// animation: slider 30s linear infinite;
+		@include m {
+			padding-block: 50px;
+		}
 	}
 
 	// .slider__li
@@ -356,10 +357,26 @@
 	&__container {
 		@include container;
 
+		position: relative;
 		display: flex;
 		justify-content: space-between;
 		min-height: 520px;
 		column-gap: 32px;
+
+		&::before {
+			position: absolute;
+			right: 35%;
+			bottom: 10%;
+			width: 280;
+			background: url("../img/icon/star.svg") 0 0 no-repeat;
+			transform: rotate(-24deg);
+			aspect-ratio: 1;
+			content: "";
+
+			@include t {
+				display: none;
+			}
+		}
 
 		@include m {
 			flex-direction: column;
@@ -370,6 +387,7 @@
 
 	// .design__text-block
 	&__text-block {
+		position: relative;
 		display: flex;
 		flex-basis: 604px;
 		flex-direction: column;
@@ -400,13 +418,6 @@
 			align-self: center;
 		}
 
-		/* stylelint-disable-next-line selector-class-pattern */
-		// &:hover .card--design-block {
-		// 	@media (any-hover) {
-		// 		animation-play-state: running;
-		// 	}
-		// }
-
 		@include canvas {
 			flex: 0 1 auto;
 		}
@@ -434,9 +445,25 @@
 	&__container {
 		@include container;
 
+		position: relative;
 		display: flex;
 		justify-content: space-between;
 		column-gap: 32px;
+
+		&::before {
+			position: absolute;
+			bottom: 5%;
+			left: 30%;
+			width: 280;
+			background: url("../img/icon/star.svg") 0 0 no-repeat;
+			transform: rotate(-24deg);
+			aspect-ratio: 1;
+			content: "";
+
+			@include t {
+				display: none;
+			}
+		}
 
 		@include m {
 			flex-direction: column-reverse;
@@ -577,11 +604,6 @@
 		grid-row: 2/3;
 		grid-column: 2/3;
 	}
-
-	// .quote__pagination
-	&__pagination {
-		// block
-	}
 }
 
 .swiper-pagination-bullet {
@@ -718,13 +740,3 @@
 		@include picture;
 	}
 }
-
-// @keyframes slider {
-// 	from {
-// 		transform: translateX(110%);
-// 	}
-
-// 	to {
-// 		transform: translateX(-110%);
-// 	}
-// }
