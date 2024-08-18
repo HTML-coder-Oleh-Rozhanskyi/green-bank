@@ -35,6 +35,10 @@ html {
 	background-color: #1a1e1c;
 	border: 0;
 
+	//  для firefox
+	scrollbar-width: thin; /* Може бути auto, thin або none */
+	scrollbar-color: var(--brand-color) var(--bg);
+
 	&.menu-active {
 		overflow-y: hidden;
 
@@ -75,6 +79,36 @@ html {
 	clip: rect(0 0 0 0) !important;
 	clip-path: inset(100%) !important;
 }
+
+/* Загальний стиль для всіх веб-кіт браузерів */
+::-webkit-scrollbar {
+	width: 7px;
+	height: 4px; /* Ширина смужки прокрутки */
+
+	@include m {
+		width: 4px;
+	}
+}
+
+::-webkit-scrollbar-track {
+	background: var(--bg); /* Колір треку */
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: var(--brand-color); /* Колір смужки прокрутки */
+	border: none; /* Простір між смужкою і треком  */
+	border-radius: 10px; /* Округлені краї смужки прокрутки */
+}
+
+// /* Додатковий стиль для окремих частин смужки */
+.scrollbar {
+	scrollbar-color: var(--brand-color) var(--bg);
+	scrollbar-width: thin;
+}
+
+// ::-webkit-scrollbar-thumb:hover {
+// 	background-color: var(--brand-color); /* Колір смужки при наведенні */
+// }
 
 /* 
 запобігти скачку контента при появі полоси прокрутки
