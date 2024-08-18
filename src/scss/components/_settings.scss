@@ -40,9 +40,12 @@ html {
 	scrollbar-color: var(--brand-color) var(--bg);
 
 	&.menu-active {
+		padding-right: 7px;
 		overflow-y: hidden;
 
-		// padding-right: 10px;
+		@include m {
+			padding-right: 4px;
+		}
 	}
 
 	&::before {
