@@ -52,7 +52,7 @@ html {
 		inset: 0;
 		width: 100%;
 		height: 100%;
-		background-image: image-set(
+		background: image-set(
 			url("../img/site_bg.jpg?as=avif") type("image/avif"),
 			url("../img/site_bg.jpg?as=webp") type("image/webp"),
 			url("../img/site_bg.jpg")
