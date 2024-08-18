@@ -19,6 +19,8 @@
 
 html {
 	scroll-padding-top: 60px;
+	scrollbar-width: thin; /* Може бути auto, thin або none */
+	scrollbar-color: var(--brand-color) var(--bg);
 }
 
 .body {
@@ -34,10 +36,6 @@ html {
 	line-height: 1.5;
 	background-color: #1a1e1c;
 	border: 0;
-
-	//  для firefox
-	scrollbar-width: thin; /* Може бути auto, thin або none */
-	scrollbar-color: var(--brand-color) var(--bg);
 
 	&.menu-active {
 		padding-right: 7px;
